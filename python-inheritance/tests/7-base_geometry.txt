@@ -3,11 +3,19 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 bg = BaseGeometry()
 
-bg.integer_validator("my_int", 12)
-bg.integer_validator("width", 89)
+try:
+    print(bg.area())
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
 
 try:
-    bg.integer_validator("name", "John")
+    bg.integer_validator("my_int", 12)
+    print("Validation passed.")
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    bg.integer_validator("name", "Holberton")
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
@@ -17,6 +25,6 @@ except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
 try:
-    bg.integer_validator("distance", -4)
+    bg.integer_validator("score", -3)
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))

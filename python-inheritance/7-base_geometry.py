@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 """Integer validator"""
 
-class BaseGeometry:
+class BaseGeometry()
  """function that write a class BaseGeometry"""
 
     def area(self):
         """public instance method that raises an Exception with a message"""
         raise Exception("area() is not implemented")
-
 
     def integer_validator(self, name, value):
         """public instance method that validates value

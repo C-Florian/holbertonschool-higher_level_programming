@@ -2,10 +2,12 @@
 """Integer validator"""
 
 class BaseGeometry:
- """function that write a class BaseGeometry (based on 5-base_geometry.py)"""
+ """function that write a class BaseGeometry"""
 
     def area(self):
-        """public instance method that raises an Exception with the message area() is not implemented"""
+        """public instance method that raises an Exception with a message"""
+        raise Exception("area() is not implemented")
+
 
     def integer_validator(self, name, value):
         """public instance method that validates value

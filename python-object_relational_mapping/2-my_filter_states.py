@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Displays states where name matches the user input (not safe from SQL injection)"""
+"""Displays states where name matches user input (vulnerable to SQL injection)"""
 
 import MySQLdb
 import sys
@@ -21,7 +21,10 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # WARNING: This is not safe from SQL injection
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
+    query = (
+        "SELECT * FROM states WHERE name = '{}' "
+        "ORDER BY id ASC".format(state_name)
+    )
     cur.execute(query)
 
     rows = cur.fetchall()

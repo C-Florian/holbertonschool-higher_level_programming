@@ -10,7 +10,7 @@ if __name__ == "__main__":
     database = sys.argv[3]
     state_name = sys.argv[4]
 
-    # Connexion à la base de données
+    # Connecting to the database
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    # Requête paramétrée sécurisée, triée par cities.id
+    # Secure parameterized query, sorted by cities.id
     query = (
         "SELECT cities.name FROM cities "
         "JOIN states ON cities.state_id = states.id "
@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     rows = cur.fetchall()
 
-    # Crée une liste des noms de villes, et affiche-les en une ligne séparée par des virgules
+    # Create a list of city names, and display them on a comma-separated line
     cities = [row[0] for row in rows]
     print(", ".join(cities))
 

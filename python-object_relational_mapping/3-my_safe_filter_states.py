@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Safely displays states where name matches user input (prevents SQL injection)"""
+"""Displays states matching a name (safe from SQL injection)"""
 
 import MySQLdb
 import sys

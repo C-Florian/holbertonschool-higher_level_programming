@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Definition of the State class mapped to the 'states' table using SQLAlchemy"""
+"""Defines the State class mapped to the 'states' table with SQLAlchemy"""
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base

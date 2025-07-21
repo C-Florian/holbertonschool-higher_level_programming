@@ -48,4 +48,9 @@ def generate_invitations(template, attendees):
         filename = f"output_{i}.txt"
         # Generate the filename using the person's number
 
-        if os.path.exi
+        if os.path.exists(filename):
+            print(f"Warning: {filename} already exists and will be overwritten.")
+
+        # Write the personalized invitation to the file
+        with open(filename, 'w') as file:
+            file.write(invitation_text)
